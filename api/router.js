@@ -22,8 +22,4 @@ const corsException = (req, cb) => {
 	cb(null, corsOptions);
 };
 
-router.post('/requestType81', cors(corsException), (req, res, next) => {
-	req.container.resolve('requestType81').handleRequest(req, res).catch(next);
-});
-
 module.exports = router;

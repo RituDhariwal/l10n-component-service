@@ -23,9 +23,6 @@ container.register({
 	dbDriverV2: asValue(middlewares.dbDriverV2),
 	// Database
 	spannerHelper: asValue(middlewares.spanner.spannerHelper),
-	// cache
-	sharechatWebRedisClient: asValue(middlewares.redis.sharechatWebRedisClient),
-	userPostSentRedisClient: asValue(middlewares.redis.userPostSentRedisClient),
 	//--------------------------------------------------
 
 
@@ -54,33 +51,21 @@ container.register('followFeedQueue', asClass(require('../repository/queue/queue
 
 
 //------------------ CACHE ----------------------
-container.register('sharechatWebRedis', asClass(require('../repository/cache/sharechatWebRedisRepo'), getScope()).inject(() => ({
-	redisClient: container.resolve('sharechatWebRedisClient')
-})));
-container.register('postSentRedis', asClass(require('../repository/cache/postSentRedis'), getScope()).inject(() => ({
-	redisClient: container.resolve('userPostSentRedisClient')
-})));
+
 //-----------------------------------------------
 
-// -------------------- REPO -------------------------
-container.register('followFeedRepoV2', asClass(require('../repository/data/followFeedRepoV2'), getScope()));
 
+// -------------------- SERVICES -------------------------
+container.register('localisationService', asClass(require('../repository/services/localisationService'), getScope()));
 
 //------------------ LOGIC ----------------------
-container.register('fetchFollowFeedLogic', asClass(require('../logic/fetchFollowFeedLogic'), getScope()));
-container.register('addToFollowFeedLogic', asClass(require('../logic/addToFollowFeedLogic'), getScope()));
-container.register('showD0PostsLogic', asClass(require('../logic/show-d0-posts-logic'), getScope()));
+container.register('cacheRefreshLogic', asClass(require('../logic/cacheRefreshLogic'), getScope()));
+
 //-----------------------------------------------
 
 
 //------------------ API -------------------------------
 // Create API after everything
-
-container.register('requestType81', asClass(require('../api/route/requestType81'), getScope()));
-
-container.register('getFollowFeedApi', asClass(require('../api/v1/getFollowFeed'), getScope()));
-
-container.register('getFollowFeedStatusApi', asClass(require('../api/v1/getFollowFeedStatus'), getScope()));
 
 container.register('getLangList', asClass(require('../api/v1/getLangList'), getScope()));
 //------------------------------------------------------
