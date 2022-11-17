@@ -1,8 +1,5 @@
 module.exports = {
 	activeEnv: 'STAGING',
-	EXPERIMENT_IDS: {
-		followfeedpopulationV2: 'aeed129f-f9d2-427a-9a97-0cc943f803e8'
-	},
 	redis: {
 		sharechatWebRedis: {
 			host: 'redis-10641.internal.c6804.asia-south1-1.gcp.cloud.rlrcp.com',
@@ -20,20 +17,8 @@ module.exports = {
 	queueDriver: {
 		followFeedQueue: 'new-follow-feed-queue'
 	},
-	postRenderingService: {
-		endpoint: 'http://post-rendering-service.staging.sharechat.internal/post-rendering-service'
-	},
-	followService: {
-		endpoint: 'http://follow-service.staging.sharechat.internal/follow-service'
-	},
-	userService: {
-		endpoint: 'http://user-service.staging.sharechat.internal/user-service'
-	},
-	feedRelevanceService: {
-		endpoint: 'http://feed-relevance-service.staging.sharechat.internal'
-	},
-	topPostService: {
-		endpoint: 'http://top-post-service.staging.sharechat.internal'
+	localisationService: {
+		endPoint: 'http://172.16.0.60:3031/l10-service/v1.0.0/labels'
 	},
 	dbDriverV2: {
 		useSharedLibrary: true,
