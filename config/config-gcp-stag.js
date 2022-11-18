@@ -18,7 +18,7 @@ module.exports = {
 		followFeedQueue: 'new-follow-feed-queue'
 	},
 	localisationService: {
-		endPoint: 'http://172.16.0.60:3031/l10-service/v1.0.0/labels'
+		endpoint: 'http://172.16.0.60:3031/l10-service'
 	},
 	dbDriverV2: {
 		useSharedLibrary: true,

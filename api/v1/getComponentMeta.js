@@ -7,9 +7,9 @@ class GetComponentMeta {
 
 	async handleRequest(req, res) {
 		const userId = req.get(this.constants.userAuthorizedHeaderKey);
-
+		const key = req.params.key;
 		try {
-			const { resp } = await this.cacheRefreshLogic.getTranslations(userId);
+			const resp = await this.cacheRefreshLogic.getTranslations(key);
 			return this.helper.writeResponse(null, { resp: resp }, res);
 		} catch (err) {
 			console.log(err);

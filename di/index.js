@@ -67,6 +67,7 @@ container.register('cacheRefreshLogic', asClass(require('../logic/cacheRefreshLo
 //------------------ API -------------------------------
 // Create API after everything
 
+container.register('getComponentMeta', asClass(require('../api/v1/getComponentMeta'), getScope()));
 container.register('getLangList', asClass(require('../api/v1/getLangList'), getScope()));
 //------------------------------------------------------
 

@@ -92,6 +92,7 @@ const constants = {
 		y: 'https://cdn.sharechat.com/ProfilePic/f21e884d-8b89-4196-b986-3a566d9c330f-76d29eb9-908b-47d1-baea-26694a846adc_thumbnail_v2.jpg',
 		z: '241292'
 	},
+	SERVICE_TRANSLATIONS_LABEL: 'android'
 };
 
 module.exports = constants;

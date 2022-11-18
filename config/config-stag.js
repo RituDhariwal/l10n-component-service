@@ -16,7 +16,7 @@ module.exports = {
 		endpoint: 'http://follow-service.staging.sharechat.com/follow-service'
 	},
 	localisationService: {
-		endPoint: 'http://172.16.0.60:3031/l10-service/v1.0.0/labels'
+		endpoint: 'http://172.16.0.60:3031/l10-service'
 	},
 	userService: {
 		endpoint: 'http://user-service.staging.sharechat.com/user-service'
