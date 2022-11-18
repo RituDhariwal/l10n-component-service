@@ -19,12 +19,11 @@ class LocalisationService {
 
 	getTranslations() {
 		return new Promise((resolve, reject) => {
-			let url = `${this.localisationServiceEndpoint}/v1.0.0/follow-relationship`;
+			let url = `${this.localisationServiceEndpoint}/v1.0.0/label-translations/${this.constants.SERVICE_TRANSLATIONS_LABEL}`;
 			const options = {
 				url: url,
 				method: 'GET',
 				forever: true,
-				//qs: qs,
 				timeout : 500
 			};
 			request(options, (err, response, body) => {
